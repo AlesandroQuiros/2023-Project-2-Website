@@ -1,5 +1,5 @@
 <!-- Store -->
-<!ELEMENT store (name,business,personel,sellers,vat,storage)>
+<!ELEMENT store (name,business,personel,sellers,vat,storage,services)>
 <!ELEMENT name (#PCDATA)>
 <!-- Business Data -->
 <!ELEMENT business (name,location)>
@@ -35,10 +35,15 @@
 <!ELEMENT vat (#PCDATA)>
 <!-- Storage -->
 <!ELEMENT storage (product+)>
-<!-- Products -->
+<!-- Product -->
 <!ELEMENT product (name,price,image)>
 <!ATTLIST product id ID #REQUIRED>
 <!ATTLIST product company NMTOKEN #REQUIRED>
 <!ELEMENT price (#PCDATA)>
 <!ATTLIST price currency (euro|dollar) #REQUIRED>
 <!ELEMENT image (#PCDATA)>
+<!-- Services -->
+<!ELEMENT services (service+)>
+<!-- Service -->
+<!ELEMENT service (name,price,image)>
+<!ATTLIST service id ID #REQUIRED>

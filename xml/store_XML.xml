@@ -72,4 +72,16 @@
             <image>hh</image>
         </product>
     </storage>
+    <services>
+        <service id="AA-3667">
+            <name>jdasjhk</name>
+            <price currency="euro">788</price>
+            <image>jhgfdsgh</image>
+        </service>
+        <service id="OC-8278">
+            <name>oo</name>
+            <price currency="dollar">688</price>
+            <image>hh</image>
+        </service>
+    </services>
 </store>
