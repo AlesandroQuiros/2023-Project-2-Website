@@ -15,7 +15,7 @@
 <!-- Roles -->
 <!ELEMENT roles (role+)>
 <!ELEMENT role (name)>
-<!ATTLIST role id (CEO|CS|WD) #REQUIRED>
+<!ATTLIST role id NMTOKEN #REQUIRED>
 <!-- Management -->
 <!ELEMENT management (employee+)>
 <!ELEMENT employee (name,age,position,infractions?)>
