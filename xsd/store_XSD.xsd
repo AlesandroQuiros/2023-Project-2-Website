@@ -156,6 +156,7 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="CEO" />
             <xs:enumeration value="CS" />
+            <xs:enumeration value="WD" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="productID">

@@ -15,14 +15,14 @@
 <!-- Roles -->
 <!ELEMENT roles (role+)>
 <!ELEMENT role (name)>
-<!ATTLIST role id (CEO|CS) #REQUIRED>
+<!ATTLIST role id (CEO|CS|WD) #REQUIRED>
 <!-- Management -->
 <!ELEMENT management (employee+)>
 <!ELEMENT employee (name,age,position,infractions?)>
 <!ATTLIST employee id ID #REQUIRED>
 <!ELEMENT age (#PCDATA)>
 <!ELEMENT position EMPTY>
-<!ATTLIST position role (CEO|CS) #REQUIRED>
+<!ATTLIST position role (CEO|CS|WD) #REQUIRED>
 <!-- Staff -->
 <!ELEMENT staff (employee+)>
 <!ELEMENT infractions (#PCDATA)>

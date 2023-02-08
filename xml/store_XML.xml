@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE store SYSTEM "../dtd/store_DTD.dtd">
 <?xml-model href="../xsd/store_XSD.xsd"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/store_XSL.xsl"?>
 <store>
     <name>WebsiteName</name>
     <business>
@@ -21,11 +22,14 @@
             <role id="CS">
                 <name>Customer Support</name>
             </role>
+            <role id="WD">
+                <name>Web Developer</name>
+            </role>
         </roles>
         <management>
             <employee id="CM-001">
                 <name>Urtzi</name>
-                <age>19</age>
+                <age>18</age>
                 <position role="CEO" />
             </employee>
             <employee id="CM-002">
@@ -46,6 +50,12 @@
                 <age>23</age>
                 <position role="CS" />
                 <infractions>1</infractions>
+            </employee>
+            <employee id="WD-266">
+                <name>hs</name>
+                <age>66</age>
+                <position role="WD" />
+                <infractions>2</infractions>
             </employee>
         </staff>
     </personel>
