@@ -71,6 +71,11 @@
             <price currency="dollar">688</price>
             <image>hh</image>
         </product>
+        <product id="XO-7567" company="XOR">
+            <name>Xor</name>
+            <price currency="euro">5.99</price>
+            <image>h</image>
+        </product>
     </storage>
     <services>
         <service id="AA-3667">
@@ -82,6 +87,11 @@
             <name>oo</name>
             <price currency="dollar">688</price>
             <image>hh</image>
+        </service>
+        <service id="XO-2578">
+            <name>pasljd</name>
+            <price currency="euro">120</price>
+            <image>yy</image>
         </service>
     </services>
 </store>
