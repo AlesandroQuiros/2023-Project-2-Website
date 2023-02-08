@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE store SYSTEM "../dtd/store_DTD.dtd">
 <?xml-model href="../xsd/store_XSD.xsd"?>
-<?xml-stylesheet type="text/xsl" href="../xsl/store_XSL.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/products.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/services.xsl"?>
 <store>
     <name>WebsiteName</name>
     <business>
