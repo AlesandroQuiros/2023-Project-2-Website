@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0">
     <xsl:template match="/">
+    <xsl:variable name="XMLstore" select="document('../xml/store.xml')"/>
         <html lang="en">
             <head>
                 <title>Products - WebsiteName</title>
@@ -13,12 +14,12 @@
                 <!-- Header -->
                 <header id="header">
                     <div class="inner">
-                        <a href="../index.html" class="logo">Nombre de la web</a>
+                        <a href="../index.html" class="logo"><xsl:value-of select="$XMLstore/store/name"/></a>
                         <nav id="nav">
                             <a href="../index.html">Home Page</a>
                             <a href="#">Products</a>
                             <a href="../xml/servicesWeb.xml">Services</a>
-                            <a href="../xml/contactWeb.xml">Contact</a>
+                            <a href="../web/contact.html">Contact</a>
                         </nav>
                     </div>
                 </header>
@@ -28,48 +29,47 @@
                 <section id="main" >
                     <div class="inner">
                         <header>
-                            <h1>Catálogo de Productos o servicios (tabla)</h1>
+                            <h1>Products Catalog</h1>
                         </header>
                         <div class="table-wrapper">
                             <table>
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Nombre</th>
-                                        <th>Descripción</th>
-                                        <th>Precio</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><img src="../images/diamante1.jpg" alt="producto 1" width="100" height="100"/></td>
-                                            <td>Producto 1</td>
-                                            <td>Descripción del producto 1:
-                                                <ul>
-                                                    <li>Dolor pulvinar etiam magna etiam.</li>
-                                                    <li>Sagittis adipiscing lorem eleifend.</li>
-                                                    <li>Felis enim feugiat dolore viverra.</li>
-                                                </ul>
-                                                
-                                            </td>
-                                            <td>29.99</td>
-                                        </tr>
+                                    <xsl:for-each select="$XMLstore/store/storage/product">
                                         <tr>
-                                            <td><img src="../images/diamante2.jpg" alt="producto 2" width="100" height="100"/></td>
-                                                <td>Producto 2</td>
-                                                <td>Descripción del producto 2:
-                                                    <ul>
-                                                        <li>Dolor pulvinar etiam magna etiam.</li>
-                                                        <li>Sagittis adipiscing lorem eleifend.</li>
-                                                        <li>Felis enim feugiat dolore viverra.</li>
-                                                    </ul>
-                                                </td>
-                                                <td>37.44</td>
-                                            </tr>
+                                            <td><a><xsl:attribute name="href">../images/<xsl:value-of select="image"/></xsl:attribute> <xsl:attribute name="target">_blank</xsl:attribute><img><xsl:attribute name="src">../images/<xsl:value-of select="image"/></xsl:attribute></img></a></td>
+                                            <td><xsl:value-of select="name"/></td>
+                                            <td>
+                                                <ul>
+                                                    <xsl:for-each select="description">
+                                                        <li><xsl:value-of select="."/></li>
+                                                    </xsl:for-each>
+                                                </ul>
+                                            </td>
+                                            <td>
+                                                <xsl:choose>
+                                                    <xsl:when test="price[@currency='euro']">
+                                                        €
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        $
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                                <xsl:value-of select="price"/>
+                                            </td>
+                                        </tr>
+                                    </xsl:for-each>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="4">Todos los productos de insuperable calidad</td>		
+                                                <td colspan="4">All products are high quality</td>		
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -90,7 +90,8 @@
                                         <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
                                         <li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
                                     </ul>
-                                    Datos de la empresa o asosciación
+                                    <xsl:value-of select="$XMLstore/store/business/name"/>
+                                    <xsl:value-of select="$XMLstore/store/business/location"/>
                                 </div>
                             </div>
                         </footer>

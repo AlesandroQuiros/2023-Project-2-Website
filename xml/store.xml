@@ -73,34 +73,42 @@
         <product id="AC-2562" company="ORA">
             <name>And</name>
             <price currency="euro">5.99</price>
-            <image>h</image>
+            <description>A</description>
+            <image>diamante1.jpg</image>
         </product>
         <product id="OC-7278" company="AND">
             <name>oo</name>
             <price currency="dollar">688</price>
-            <image>hh</image>
+            <description>A</description>
+            <image>diamante1.jpg</image>
         </product>
         <product id="XO-7567" company="XOR">
             <name>Xor</name>
             <price currency="euro">5.99</price>
-            <image>h</image>
+            <description>A</description>
+            <description>b</description>
+            <image>diamante1.jpg</image>
         </product>
     </storage>
     <services>
         <service id="AA-3667">
             <name>jdasjhk</name>
             <price currency="euro">788</price>
+            <description>A</description>
             <image>jhgfdsgh</image>
         </service>
         <service id="OC-8278">
             <name>oo</name>
             <price currency="dollar">688</price>
+            <description>A</description>
             <image>hh</image>
         </service>
         <service id="XO-2578">
             <name>pasljd</name>
             <price currency="euro">120</price>
-            <image>yy</image>
+            <description>A</description>
+            <description>b</description>
+            <image>diamante1.jpg</image>
         </service>
     </services>
 </store>
