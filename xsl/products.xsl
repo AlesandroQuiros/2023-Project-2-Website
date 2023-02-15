@@ -54,6 +54,7 @@
                                                 </ul>
                                             </td>
                                             <td>
+                                                <xsl:value-of select="price"/>
                                                 <xsl:choose>
                                                     <xsl:when test="price[@currency='euro']">
                                                         €
@@ -62,7 +63,6 @@
                                                         $
                                                     </xsl:otherwise>
                                                 </xsl:choose>
-                                                <xsl:value-of select="price"/>
                                             </td>
                                         </tr>
                                     </xsl:for-each>
