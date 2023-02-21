@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="store">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" />
+                <xs:element name="business">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string" />
+                            <xs:element name="location">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="street" type="xs:string" />
+                                        <xs:element name="postcode" type="xs:string" />
+                                        <xs:element name="city" type="xs:string" />
+                                        <xs:element name="province" type="xs:string" />
+                                        <xs:element name="country" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="personel">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="roles">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="role" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="name" type="xs:string" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="management">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="employee" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="name" type="xs:string" />
+                                                    <xs:element name="age" type="xs:string" />
+                                                    <xs:element name="position">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute name="role"
+                                                                        use="required" type="roleID" />
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="id" use="required"
+                                                    type="employeeID" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="staff">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="employee" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="name" type="xs:string" />
+                                                    <xs:element name="age" type="xs:string" />
+                                                    <xs:element name="position">
+                                                        <xs:complexType>
+                                                            <xs:simpleContent>
+                                                                <xs:extension base="xs:string">
+                                                                    <xs:attribute name="role"
+                                                                        use="required" type="roleID" />
+                                                                </xs:extension>
+                                                            </xs:simpleContent>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="infractions" type="xs:string" />
+                                                </xs:sequence>
+                                                <xs:attribute name="id" use="required"
+                                                    type="employeeID" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sellers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="company" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string" />
+                                        <xs:element name="web" type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="vat" type="xs:string" />
+                <xs:element name="storage">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="product" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string" />
+                                        <xs:element ref="price" />
+                                        <xs:element name="description" type="xs:string"
+                                            minOccurs="1" maxOccurs="unbounded" />
+                                        <xs:element name="image" type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required" type="productID" />
+                                    <xs:attribute name="company" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="services">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="service" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string" />
+                                        <xs:element ref="price" />
+                                        <xs:element name="description" type="xs:string"
+                                            minOccurs="1" maxOccurs="unbounded" />
+                                        <xs:element name="image" type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required" type="productID" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="employeeID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}-[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="roleID">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CEO" />
+            <xs:enumeration value="CS" />
+            <xs:enumeration value="WD" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="productID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}-[0-9]{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="price">
+        <xs:complexType mixed="true">
+            <xs:attribute name="currency">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="euro"></xs:enumeration>
+                        <xs:enumeration value="dollar"></xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
