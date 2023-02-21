@@ -3974,3 +3974,12 @@
 			}
 
 		}
+
+		.highlightName {
+			color:#e23135;
+		}
+
+		.highlightName:hover {
+			color:#e23135;
+			font-weight: bold;
+		}
