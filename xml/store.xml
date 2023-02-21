@@ -45,13 +45,13 @@
                 <infractions>0</infractions>
             </employee>
             <employee id="CS-011">
-                <name>c</name>
+                <name>Jose María Ramirez</name>
                 <age>23</age>
                 <position role="CS" />
                 <infractions>1</infractions>
             </employee>
             <employee id="WD-266">
-                <name>hs</name>
+                <name>Paco Perez de Arganzon</name>
                 <age>66</age>
                 <position role="WD" />
                 <infractions>2</infractions>
@@ -92,23 +92,22 @@
     </storage>
     <services>
         <service id="AA-3667">
-            <name>jdasjhk</name>
-            <price currency="euro">788</price>
+            <name>Custom flag design</name>
+            <price currency="euro">500</price>
             <description>A</description>
-            <image>jhgfdsgh</image>
+            <image>https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png?w=429</image>
         </service>
         <service id="OC-8278">
-            <name>oo</name>
-            <price currency="dollar">688</price>
+            <name>Flag printing</name>
+            <price currency="dollar">750</price>
             <description>A</description>
-            <image>hh</image>
+            <image>https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png?w=429</image>
         </service>
         <service id="XO-2578">
-            <name>pasljd</name>
-            <price currency="euro">120</price>
+            <name>Phone case print</name>
+            <price currency="euro">1000</price>
             <description>A</description>
-            <description>b</description>
-            <image>diamante1.jpg</image>
+            <image>https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png?w=429</image>
         </service>
     </services>
 </store>

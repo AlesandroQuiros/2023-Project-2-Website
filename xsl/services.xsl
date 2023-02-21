@@ -44,10 +44,10 @@
                                 <span >Price: <xsl:value-of select="current()/price"/> 
                                     <xsl:choose>
                                         <xsl:when test="current()/price[@currency='dollar']">
-                                            $
+                                            $ | <xsl:value-of select="current()/price * 0.94"/> €
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            €
+                                            € | <xsl:value-of select="current()/price * 1.06"/> $
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </span>
