@@ -29,7 +29,7 @@
                 <section id="main" >
                     <div class="inner">
                         <header>
-                            <h1 style="text-align:center">Catálogo de servicios</h1>
+                            <h1 style="text-align:center">Service catalogue</h1>
                         </header>
                         <xsl:for-each select="$page/store/services/service">
                             <div class="box">

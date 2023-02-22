@@ -94,20 +94,20 @@
         <service id="AA-3667">
             <name>Custom flag design</name>
             <price currency="euro">500</price>
-            <description>A</description>
+            <description>We will help you design your dream flag.</description>
             <image>questionFlag.jpg</image>
         </service>
         <service id="OC-8278">
             <name>Flag printing</name>
             <price currency="dollar">750</price>
-            <description>A</description>
+            <description>Get us a drawing and we will turn it into a flag.</description>
             <image>printerFlag.jpg</image>
         </service>
         <service id="XO-2578">
             <name>Phone case print</name>
             <price currency="euro">1000</price>
-            <description>A</description>
-            <image>flag.jpg</image>
+            <description>We will print whatever you want over a phone case.</description>
+            <image>phone.jpg</image>
         </service>
     </services>
 </store>
