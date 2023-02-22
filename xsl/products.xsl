@@ -45,7 +45,7 @@
                                 <tbody>
                                     <xsl:for-each select="$XMLstore/store/storage/product">
                                         <tr>
-                                            <td><a><xsl:attribute name="href">../images/<xsl:value-of select="image"/></xsl:attribute> <xsl:attribute name="target">_blank</xsl:attribute><img><xsl:attribute name="src">../images/<xsl:value-of select="image"/></xsl:attribute></img></a></td>
+                                            <td><a><xsl:attribute name="href">../images/<xsl:value-of select="image"/></xsl:attribute> <xsl:attribute name="target">_blank</xsl:attribute><img><xsl:attribute name="src">../images/<xsl:value-of select="url"/></xsl:attribute></img></a></td>
                                             <td><span class="highlightName"><xsl:value-of select="name"/></span></td>
                                             <td>
                                                 <ul>
