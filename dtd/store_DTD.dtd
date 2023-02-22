@@ -36,15 +36,16 @@
 <!-- Storage -->
 <!ELEMENT storage (product+)>
 <!-- Product -->
-<!ELEMENT product (name,price,description+,image)>
+<!ELEMENT product (name,price,description+,url,image)>
 <!ATTLIST product id ID #REQUIRED>
 <!ATTLIST product company NMTOKEN #REQUIRED>
 <!ELEMENT price (#PCDATA)>
 <!ELEMENT description (#PCDATA)>
 <!ATTLIST price currency (euro|dollar) #REQUIRED>
+<!ELEMENT url (#PCDATA)>
 <!ELEMENT image (#PCDATA)>
 <!-- Services -->
 <!ELEMENT services (service+)>
 <!-- Service -->
-<!ELEMENT service (name,price,description+,image)>
+<!ELEMENT service (name,price,description+,url,image)>
 <!ATTLIST service id ID #REQUIRED>
