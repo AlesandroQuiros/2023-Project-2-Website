@@ -120,6 +120,7 @@
                                         <xs:element name="name" type="xs:string" />
                                         <xs:element ref="price" />
                                         <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+                                        <xs:element name="url" type="xs:string" />
                                         <xs:element name="image" type="xs:string" />
                                     </xs:sequence>
                                     <xs:attribute name="id" use="required" type="productID" />
@@ -138,6 +139,7 @@
                                         <xs:element name="name" type="xs:string" />
                                         <xs:element ref="price" />
                                         <xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+                                        <xs:element name="url" type="xs:string" />
                                         <xs:element name="image" type="xs:string" />
                                     </xs:sequence>
                                     <xs:attribute name="id" use="required" type="productID" />
