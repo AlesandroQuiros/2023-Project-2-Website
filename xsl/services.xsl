@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0">
+    <xsl:variable name="page" select="document('../xml/store.xml')"/>
     <xsl:template match="/">
         <html lang="en">
             <head>
@@ -28,56 +29,31 @@
                 <section id="main" >
                     <div class="inner">
                         <header>
-                            <h1>Catálogo de Productos o servicios (divisiones)</h1>
+                            <h1 style="text-align:center">Service catalogue</h1>
                         </header>
-                        <div class="box">
-                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="../images/pic01.jpg" alt="" /></a>				
-                            <h3>Producto 1</h3>
-                            <strong>Descripción del producto 1:</strong>
-                            <ul>
-                                <li>Dolor pulvinar etiam magna etiam.</li>
-                                <li>Sagittis adipiscing lorem eleifend.</li>
-                                <li>Felis enim feugiat dolore viverra.</li>
-                            </ul>
-                            <span>Precio: 23.45</span>
-                            <a href="#" class="button fit">Más información</a>
-                        </div>
-                        <div class="box">
-                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="../images/pic02.jpg" alt="" /></a>				
-                            <h3>Producto 2</h3>
-                            <strong>Descripción del producto 2:</strong>
-                            <ul>
-                                <li>Dolor pulvinar etiam magna etiam.</li>
-                                <li>Sagittis adipiscing lorem eleifend.</li>
-                                <li>Felis enim feugiat dolore viverra.</li>
-                            </ul>
-                            <span>Precio: 33.45</span>
-                            <a href="#" class="button fit">Más información</a>
-                        </div>
-                        <div class="box">
-                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="../images/pic03.jpg" alt="" /></a>				
-                            <h3>Producto 3</h3>
-                            <strong>Descripción del producto 3:</strong>
-                            <ul>
-                                <li>Dolor pulvinar etiam magna etiam.</li>
-                                <li>Sagittis adipiscing lorem eleifend.</li>
-                                <li>Felis enim feugiat dolore viverra.</li>
-                            </ul>
-                            <span>Precio: 63.45</span>
-                            <a href="#" class="button fit">Más información</a>
-                        </div>	
-                        <div class="box">
-                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="../images/pic04.jpg" alt="" /></a>				
-                            <h3>Producto 4</h3>
-                            <strong>Descripción del producto 4:</strong>
-                            <ul>
-                                <li>Dolor pulvinar etiam magna etiam.</li>
-                                <li>Sagittis adipiscing lorem eleifend.</li>
-                                <li>Felis enim feugiat dolore viverra.</li>
-                            </ul>
-                            <span>Precio: 29.45</span>
-                            <a href="#" class="button fit">Más información</a>
-                        </div>	
+                        <xsl:for-each select="$page/store/services/service">
+                            <div class="box">
+                                <a href="{current()/image}" target="_blank" class="image fit"><img height="300" src="../images/{current()/image}" alt="Image of {current()/name}" style="filter: grayscale(100%)"/></a>				
+                                <h3><xsl:value-of select="current()/name"/></h3>
+                                <strong>Descripción de <xsl:value-of select="current()/name"/>:</strong>
+                                <ul>
+                                    <xsl:for-each select="current()/description">
+                                        <li><xsl:value-of select="current()"/></li>
+                                    </xsl:for-each>
+                                </ul>
+                                <span >Price: <xsl:value-of select="format-number(current()/price,'#.00')"/> 
+                                    <xsl:choose>
+                                        <xsl:when test="current()/price[@currency='dollar']">
+                                            $ | <xsl:value-of select="format-number(current()/price * 0.94,'#.00')"/> €
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            € | <xsl:value-of select="format-number(current()/price * 1.06,'#.00')"/> $
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </span>
+                                <a href="#" class="button fit">Más información</a>
+                            </div>
+                        </xsl:for-each>
                     </div>
                 </section>
                 
