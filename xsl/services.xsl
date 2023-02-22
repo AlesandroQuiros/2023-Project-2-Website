@@ -51,7 +51,7 @@
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </span>
-                                <a href="#" class="button fit">Más información</a>
+                                <a href="{current()/url}" class="button fit">Más información</a>
                             </div>
                         </xsl:for-each>
                     </div>
@@ -70,7 +70,8 @@
                                 <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
                                 <li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
                             </ul>
-                            Datos de la empresa o asosciación
+                            <xsl:value-of select="$XMLstore/store/business/name"/>
+                            <xsl:value-of select="$XMLstore/store/business/location"/> 
                         </div>
                     </div>
                 </footer>
