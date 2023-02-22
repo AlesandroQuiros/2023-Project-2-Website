@@ -2,11 +2,11 @@
 <!DOCTYPE store SYSTEM "../dtd/store_DTD.dtd">
 <?xml-model href="../xsd/store_XSD.xsd"?>
 <store>
-    <name>WebsiteName</name>
+    <name>Proud Shop</name>
     <business>
-        <name>BusinessName</name>
+        <name>Pride HQ</name>
         <location>
-            <street>12 Street</street>
+            <street>12 Heart</street>
             <postcode>01009</postcode>
             <city>Vitoria-Gasteiz</city>
             <province>Álava</province>
