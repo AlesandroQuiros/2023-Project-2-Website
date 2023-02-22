@@ -105,7 +105,7 @@
         </service>
         <service id="XO-2578">
             <name>Phone case print</name>
-            <price currency="euro">1000</price>
+            <price currency="euro">20</price>
             <description>We will print whatever you want over a phone case.</description>
             <image>phone.jpg</image>
         </service>
