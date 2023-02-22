@@ -19,7 +19,7 @@
                             <a href="../index.html">Home Page</a>
                             <a href="../xml/productsWeb.xml">Products</a>
                             <a href="#">Services</a>
-                            <a href="../xml/contactWeb.xml">Contact</a>
+                            <a href="../web/contact.html">Contact</a>
                         </nav>
                     </div>
                 </header>
@@ -70,8 +70,8 @@
                                 <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
                                 <li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
                             </ul>
-                            <xsl:value-of select="$XMLstore/store/business/name"/>
-                            <xsl:value-of select="$XMLstore/store/business/location"/> 
+                            <xsl:value-of select="$page/store/business/name"/>
+                            <xsl:value-of select="$page/store/business/location"/> 
                         </div>
                     </div>
                 </footer>
