@@ -81,7 +81,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="4">All products are high quality</td>		
+                                                <td colspan="4">*All products come with 7 day warranty</td>		
                                             </tr>
                                         </tfoot>
                                     </table>
