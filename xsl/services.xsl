@@ -33,7 +33,7 @@
                         </header>
                         <xsl:for-each select="$page/store/services/service">
                             <div class="box">
-                                <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="{current()/image}" alt="Image of {current()/name}" /></a>				
+                                <a href="{current()/image}" target="_blank" class="image fit"><img height="300" src="../images/{current()/image}" alt="Image of {current()/name}" style="filter: grayscale(100%)"/></a>				
                                 <h3><xsl:value-of select="current()/name"/></h3>
                                 <strong>Descripción de <xsl:value-of select="current()/name"/>:</strong>
                                 <ul>

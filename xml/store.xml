@@ -95,19 +95,19 @@
             <name>Custom flag design</name>
             <price currency="euro">500</price>
             <description>A</description>
-            <image>https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png?w=429</image>
+            <image>questionFlag.jpg</image>
         </service>
         <service id="OC-8278">
             <name>Flag printing</name>
             <price currency="dollar">750</price>
             <description>A</description>
-            <image>https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png?w=429</image>
+            <image>printerFlag.jpg</image>
         </service>
         <service id="XO-2578">
             <name>Phone case print</name>
             <price currency="euro">1000</price>
             <description>A</description>
-            <image>https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png?w=429</image>
+            <image>flag.jpg</image>
         </service>
     </services>
 </store>
