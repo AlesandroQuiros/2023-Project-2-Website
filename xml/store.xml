@@ -2,11 +2,11 @@
 <!DOCTYPE store SYSTEM "../dtd/store_DTD.dtd">
 <?xml-model href="../xsd/store_XSD.xsd"?>
 <store>
-    <name>WebsiteName</name>
+    <name>Proud Shop</name>
     <business>
-        <name>BusinessName</name>
+        <name>Pride HQ</name>
         <location>
-            <street>12 Street</street>
+            <street>12 Heart</street>
             <postcode>01009</postcode>
             <city>Vitoria-Gasteiz</city>
             <province>Álava</province>
@@ -59,48 +59,58 @@
         </staff>
     </personel>
     <sellers>
-        <company id="ORA">
-            <name>and</name>
-            <web>https://yes.com</web>
+        <company id="PRI">
+            <name>Pride</name>
+            <web>https://pride.com</web>
         </company>
-        <company id="AND">
-            <name>or</name>
-            <web>https://aaaaa.com</web>
+        <company id="EQU">
+            <name>Equality</name>
+            <web>https://equality.com</web>
         </company>
     </sellers>
     <vat>15</vat>
     <storage>
-        <product id="AC-2562" company="ORA">
-            <name>And</name>
-            <price currency="euro">5.99</price>
-            <image>h</image>
+        <product id="PF-1002" company="PRI">
+            <name>Pride Flag</name>
+            <price currency="euro">9.99</price>
+            <description>Express your pride with this bright pride flag!</description>
+            <description>Size: 75x200cm</description>
+            <image>Pride_Flag.png</image>
         </product>
-        <product id="OC-7278" company="AND">
-            <name>oo</name>
-            <price currency="dollar">688</price>
-            <image>hh</image>
+        <product id="BF-1003" company="EQU">
+            <name>Bisexual Flag</name>
+            <price currency="dollar">9.89</price>
+            <description>Express your pride in being bisexual with this colourful bisexual flag!</description>
+            <description>Comes in 2 sizes: 35x100cm and 75x200cm</description>
+            <image>Bisexual_Flag.png</image>
         </product>
-        <product id="XO-7567" company="XOR">
-            <name>Xor</name>
-            <price currency="euro">5.99</price>
-            <image>h</image>
+        <product id="PF-1004" company="PRI">
+            <name>Transgender Phone Case</name>
+            <price currency="euro">15.99</price>
+            <description>Show off your pride on being transgender with this beautiful transgender phone case on your phone!</description>
+            <description>Available for iPhone 8 onwards</description>
+            <image>Transgender_Phone_Case.jpg</image>
         </product>
     </storage>
     <services>
         <service id="AA-3667">
             <name>jdasjhk</name>
             <price currency="euro">788</price>
+            <description>A</description>
             <image>jhgfdsgh</image>
         </service>
         <service id="OC-8278">
             <name>oo</name>
             <price currency="dollar">688</price>
+            <description>A</description>
             <image>hh</image>
         </service>
         <service id="XO-2578">
             <name>pasljd</name>
             <price currency="euro">120</price>
-            <image>yy</image>
+            <description>A</description>
+            <description>b</description>
+            <image>diamante1.jpg</image>
         </service>
     </services>
 </store>
