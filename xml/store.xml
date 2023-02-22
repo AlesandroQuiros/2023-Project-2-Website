@@ -75,6 +75,7 @@
             <price currency="euro">9.99</price>
             <description>Express your pride with this bright pride flag!</description>
             <description>Size: 75x200cm</description>
+            <url>https://pride.com/PrideFlag</url>
             <image>Pride_Flag.png</image>
         </product>
         <product id="BF-1003" company="EQU">
@@ -82,6 +83,7 @@
             <price currency="dollar">9.89</price>
             <description>Express your pride in being bisexual with this colourful bisexual flag!</description>
             <description>Comes in 2 sizes: 35x100cm and 75x200cm</description>
+            <url>https://equality.com/BiFlag</url>
             <image>Bisexual_Flag.png</image>
         </product>
         <product id="PF-1004" company="PRI">
@@ -89,6 +91,7 @@
             <price currency="euro">15.99</price>
             <description>Show off your pride on being transgender with this beautiful transgender phone case on your phone!</description>
             <description>Available for iPhone 8 onwards</description>
+            <url>https://pride.com/TransPhoneCase</url>
             <image>Transgender_Phone_Case.jpg</image>
         </product>
     </storage>
@@ -97,18 +100,21 @@
             <name>Custom flag design</name>
             <price currency="euro">500</price>
             <description>We will help you design your dream flag.</description>
+            <url>https://proud.com/CustomFlag</url>
             <image>questionFlag.jpg</image>
         </service>
         <service id="FP-2002">
             <name>Flag printing</name>
             <price currency="dollar">750</price>
             <description>Get us a drawing and we will turn it into a flag.</description>
+            <url>https://proud.com/FlagPrint</url>
             <image>printerFlag.jpg</image>
         </service>
         <service id="PC-2003">
             <name>Phone case print</name>
             <price currency="euro">20</price>
             <description>We will print whatever you want over a phone case.</description>
+            <url>https://proud.com/PhoneCase</url>
             <image>phone.jpg</image>
         </service>
     </services>
