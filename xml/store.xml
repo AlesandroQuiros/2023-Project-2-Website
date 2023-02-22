@@ -39,19 +39,19 @@
         </management>
         <staff>
             <employee id="CS-010">
-                <name>a</name>
+                <name>Juan Manuel Perez</name>
                 <age>21</age>
                 <position role="CS" />
                 <infractions>0</infractions>
             </employee>
             <employee id="CS-011">
-                <name>c</name>
+                <name>Jose María Ramirez</name>
                 <age>23</age>
                 <position role="CS" />
                 <infractions>1</infractions>
             </employee>
             <employee id="WD-266">
-                <name>hs</name>
+                <name>Paco Perez de Arganzon</name>
                 <age>66</age>
                 <position role="WD" />
                 <infractions>2</infractions>
@@ -93,24 +93,23 @@
         </product>
     </storage>
     <services>
-        <service id="AA-3667">
-            <name>jdasjhk</name>
-            <price currency="euro">788</price>
-            <description>A</description>
-            <image>jhgfdsgh</image>
+        <service id="CF-2001">
+            <name>Custom flag design</name>
+            <price currency="euro">500</price>
+            <description>We will help you design your dream flag.</description>
+            <image>questionFlag.jpg</image>
         </service>
-        <service id="OC-8278">
-            <name>oo</name>
-            <price currency="dollar">688</price>
-            <description>A</description>
-            <image>hh</image>
+        <service id="FP-2002">
+            <name>Flag printing</name>
+            <price currency="dollar">750</price>
+            <description>Get us a drawing and we will turn it into a flag.</description>
+            <image>printerFlag.jpg</image>
         </service>
-        <service id="XO-2578">
-            <name>pasljd</name>
-            <price currency="euro">120</price>
-            <description>A</description>
-            <description>b</description>
-            <image>diamante1.jpg</image>
+        <service id="PC-2003">
+            <name>Phone case print</name>
+            <price currency="euro">20</price>
+            <description>We will print whatever you want over a phone case.</description>
+            <image>phone.jpg</image>
         </service>
     </services>
 </store>
