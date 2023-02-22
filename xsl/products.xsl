@@ -4,7 +4,7 @@
     <xsl:variable name="XMLstore" select="document('../xml/store.xml')"/>
         <html lang="en">
             <head>
-                <title>Products - WebsiteName</title>
+                <title>Products - Proud Shop</title>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
                 <link rel="stylesheet" href="../assets/css/main.css" />
