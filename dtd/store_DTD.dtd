@@ -1,0 +1,51 @@
+<!-- Store -->
+<!ELEMENT store (name,business,personel,sellers,vat,storage,services)>
+<!ELEMENT name (#PCDATA)>
+<!-- Business Data -->
+<!ELEMENT business (name,location)>
+<!-- Business Location -->
+<!ELEMENT location (street,postcode,city,province,country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT postcode (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT province (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!-- Personel -->
+<!ELEMENT personel (roles+,management+,staff+)>
+<!-- Roles -->
+<!ELEMENT roles (role+)>
+<!ELEMENT role (name)>
+<!ATTLIST role id NMTOKEN #REQUIRED>
+<!-- Management -->
+<!ELEMENT management (employee+)>
+<!ELEMENT employee (name,age,position,infractions?)>
+<!ATTLIST employee id ID #REQUIRED>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT position EMPTY>
+<!ATTLIST position role (CEO|CS|WD) #REQUIRED>
+<!-- Staff -->
+<!ELEMENT staff (employee+)>
+<!ELEMENT infractions (#PCDATA)>
+<!-- Sellers/Companies -->
+<!ELEMENT sellers (company+)>
+<!ELEMENT company (name,web)>
+<!ATTLIST company id NMTOKEN #REQUIRED>
+<!ELEMENT web (#PCDATA)>
+<!-- iva -->
+<!ELEMENT vat (#PCDATA)>
+<!-- Storage -->
+<!ELEMENT storage (product+)>
+<!-- Product -->
+<!ELEMENT product (name,price,description+,url,image)>
+<!ATTLIST product id ID #REQUIRED>
+<!ATTLIST product company NMTOKEN #REQUIRED>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST price currency (euro|dollar) #REQUIRED>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+<!-- Services -->
+<!ELEMENT services (service+)>
+<!-- Service -->
+<!ELEMENT service (name,price,description+,url,image)>
+<!ATTLIST service id ID #REQUIRED>
