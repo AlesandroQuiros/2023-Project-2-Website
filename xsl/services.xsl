@@ -17,7 +17,7 @@
                         <a href="../index.html" class="logo">Nombre de la web</a>
                         <nav id="nav">
                             <a href="../index.html">Home Page</a>
-                            <a href="../xml/fullCatalogue.xml">Catalogue</a>
+                            <a href="../xml/fullCatalogue.xml">Catalog</a>
                             <a href="../xml/productsWeb.xml">Products</a>
                             <a href="#">Services</a>
                             <a href="../web/contact.html">Contact</a>

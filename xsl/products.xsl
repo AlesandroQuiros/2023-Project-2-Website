@@ -17,7 +17,7 @@
                         <a href="../index.html" class="logo"><xsl:value-of select="$XMLstore/store/name"/></a>
                         <nav id="nav">
                             <a href="../index.html">Home Page</a>
-                            <a href="../xml/fullCatalogue.xml">Catalogue</a>
+                            <a href="../xml/fullCatalogue.xml">Catalog</a>
                             <a href="#">Products</a>
                             <a href="../xml/servicesWeb.xml">Services</a>
                             <a href="../web/contact.html">Contact</a>

@@ -9,7 +9,7 @@
             }
         </style>
             <head>
-                <title>Products - Proud Shop</title>
+                <title>Catalog - Proud Shop</title>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
                 <link rel="stylesheet" href="../assets/css/main.css" />
@@ -22,7 +22,7 @@
                         <a href="../index.html" class="logo"><xsl:value-of select="$XMLstore/store/name"/></a>
                         <nav id="nav">
                             <a href="../index.html">Home Page</a>
-                            <a href="#">Catalogue</a>
+                            <a href="#">Catalog</a>
                             <a href="../xml/productsWeb.xml">Products</a>
                             <a href="../xml/servicesWeb.xml">Services</a>
                             <a href="../web/contact.html">Contact</a>
@@ -35,8 +35,8 @@
                 <section id="main" >
                     <div class="inner">
                         <header>
-                            <h1>Products Catalog</h1>
-                            <span>Total number: <xsl:value-of select="count($XMLstore/store/storage/product) + count($XMLstore/store/services/service) "></xsl:value-of></span>
+                            <h1>Catalog</h1>
+                            <span>Total: <xsl:value-of select="count($XMLstore/store/storage/product) + count($XMLstore/store/services/service) "></xsl:value-of> (<xsl:value-of select="count($XMLstore/store/storage/product)"/> products and <xsl:value-of select="count($XMLstore/store/services/service)"/> services)</span>
                         </header>
                         <div class="table-wrapper">
                             <table>
