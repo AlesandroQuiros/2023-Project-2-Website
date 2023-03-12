@@ -17,6 +17,7 @@
                         <a href="../index.html" class="logo"><xsl:value-of select="$XMLstore/store/name"/></a>
                         <nav id="nav">
                             <a href="../index.html">Home Page</a>
+                            <a href="../xml/fullCatalogue.xml">Catalogue</a>
                             <a href="#">Products</a>
                             <a href="../xml/servicesWeb.xml">Services</a>
                             <a href="../web/contact.html">Contact</a>
@@ -30,23 +31,24 @@
                     <div class="inner">
                         <header>
                             <h1>Products Catalog</h1>
+                            <span>Total number of products: <xsl:value-of select="count($XMLstore/store/storage/product) "></xsl:value-of></span>
                         </header>
                         <div class="table-wrapper">
                             <table>
                                 <thead>
                                     <tr>
                                         <th></th>
+                                        <th></th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Price</th>
-                                        <th>Price with TAX</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <xsl:for-each select="$XMLstore/store/storage/product">
                                         <tr>
                                             <td><a><xsl:attribute name="href">../images/<xsl:value-of select="image"/></xsl:attribute> <xsl:attribute name="target">_blank</xsl:attribute><img><xsl:attribute name="src">../images/<xsl:value-of select="image"/></xsl:attribute></img></a></td>
-                                            <a><xsl:attribute name="href"><xsl:value-of select="url"/></xsl:attribute>Más información</a>
+                                            <a><xsl:attribute name="href"><xsl:value-of select="url"/></xsl:attribute>More information</a>
                                             <td><span class="highlightName"><xsl:value-of select="name"/></span></td>
                                             <td>
                                                 <ul>
@@ -56,33 +58,34 @@
                                                 </ul>
                                             </td>
                                             <td>
-                                                <xsl:value-of select="price"/>
-                                                <xsl:choose>
-                                                    <xsl:when test="price[@currency='euro']">
-                                                        € | <xsl:value-of select="format-number(price * 1.06,'#.00')"/> $
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        $ | <xsl:value-of select="format-number(price * 0.94,'#.00')"/> €
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
-                                            </td>
-                                            <td>
+                                                <s>
                                                 <xsl:value-of select="format-number(price+(//vat*price div 100),'#.00')"/>
                                                 <xsl:choose>
                                                     <xsl:when test="price[@currency='euro']">
-                                                        € | <xsl:value-of select="format-number(price * 1.06 + (//vat*price div 100),'#.00')"/> $
+                                                        € | <xsl:value-of select="format-number(price * 1.06 + (//vat*price*1.06 div 100),'#.00')"/> $
                                                     </xsl:when>
                                                     <xsl:otherwise>
-                                                        $ | <xsl:value-of select="format-number(price * 0.94 + (//vat*price div 100),'#.00')"/> €
+                                                        $ | <xsl:value-of select="format-number(price * 0.94 + (//vat*price*0.94 div 100),'#.00')"/> €
                                                     </xsl:otherwise>
                                                 </xsl:choose>
+                                                </s>
+                                                <xsl:value-of select="format-number(price + (price div 100)-(../discount*price div 100),'#.00')"/>
+                                                <xsl:choose>
+                                                    <xsl:when test="price[@currency='euro']">
+                                                        € | <xsl:value-of select="format-number(price * 1.06 + (//vat*price*1.06 div 100)-(../discount*price*1.06 div 100),'#.00')"/> $
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        $ | <xsl:value-of select="format-number(price * 0.94 + (price*0.94 div 100)-(../discount*price*0.94 div 100),'#.00')"/> €
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                                <br/><b><xsl:value-of select="../discount"/>% off!</b>
                                             </td>
                                         </tr>
                                     </xsl:for-each>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="4">*All products come with 7 day warranty</td>		
+                                                <td colspan="4">*All products come with <xsl:value-of select="$XMLstore//vat"/>% vat (already included)</td>	
                                             </tr>
                                         </tfoot>
                                     </table>

@@ -114,6 +114,7 @@
                 <xs:element name="storage">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element name="discount" type="xs:string" />
                             <xs:element name="product" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -133,6 +134,7 @@
                 <xs:element name="services">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element name="discount" type="xs:string" />
                             <xs:element name="service" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>

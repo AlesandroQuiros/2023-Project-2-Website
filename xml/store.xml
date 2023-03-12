@@ -68,8 +68,9 @@
             <web>https://equality.com</web>
         </company>
     </sellers>
-    <vat>15</vat>
+    <vat>5</vat>
     <storage>
+        <discount>15</discount>
         <product id="PF-1002" company="PRI">
             <name>Pride Flag</name>
             <price currency="euro">9.99</price>
@@ -96,6 +97,7 @@
         </product>
     </storage>
     <services>
+        <discount>10</discount>
         <service id="CF-2001">
             <name>Custom flag design</name>
             <price currency="euro">500</price>

@@ -4,7 +4,7 @@
     <xsl:template match="/">
         <html lang="en">
             <head>
-                <title>Services - WebsiteName</title>
+                <title>Services - Proud Shop</title>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
                 <link rel="stylesheet" href="../assets/css/main.css" />
@@ -17,6 +17,7 @@
                         <a href="../index.html" class="logo">Nombre de la web</a>
                         <nav id="nav">
                             <a href="../index.html">Home Page</a>
+                            <a href="../xml/fullCatalogue.xml">Catalogue</a>
                             <a href="../xml/productsWeb.xml">Products</a>
                             <a href="#">Services</a>
                             <a href="../web/contact.html">Contact</a>
@@ -30,10 +31,11 @@
                     <div class="inner">
                         <header>
                             <h1 style="text-align:center">Service catalogue</h1>
+                            <span>Total number of services: <xsl:value-of select="count($page/store/services/service) "></xsl:value-of></span>
                         </header>
                         <xsl:for-each select="$page/store/services/service">
                             <div class="box">
-                                <a href="{current()/image}" target="_blank" class="image fit"><img height="300" src="../images/{current()/image}" alt="Image of {current()/name}" style="filter: grayscale(100%)"/></a>				
+                                <a href="../images/{current()/image}" target="_blank" class="image fit"><img height="300" src="../images/{current()/image}" alt="Image of {current()/name}" style="filter: grayscale(100%)"/></a>				
                                 <h3><xsl:value-of select="current()/name"/></h3>
                                 <strong>Descripción de <xsl:value-of select="current()/name"/>:</strong>
                                 <ul>
@@ -41,19 +43,31 @@
                                         <li><xsl:value-of select="current()"/></li>
                                     </xsl:for-each>
                                 </ul>
-                                <span >Price: <xsl:value-of select="format-number(current()/price,'#.00')"/> 
+                                <span >Price: <xsl:value-of select="format-number(current()/price + (current()/price*//vat div 100),'#.00')"/> 
                                     <xsl:choose>
                                         <xsl:when test="current()/price[@currency='dollar']">
-                                            $ | <xsl:value-of select="format-number(current()/price * 0.94,'#.00')"/> €
+                                            $ | <xsl:value-of select="format-number(current()/price * 0.94 + (current()/price*0.94*//vat div 100),'#.00')"/> €
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            € | <xsl:value-of select="format-number(current()/price * 1.06,'#.00')"/> $
+                                            € | <xsl:value-of select="format-number(current()/price * 1.06 + (current()/price*1.06*//vat div 100),'#.00')"/> $
                                         </xsl:otherwise>
                                     </xsl:choose>
+                                    <br/><b><xsl:value-of select="../discount"/>% off: </b>
+                                    <xsl:value-of select="format-number(price + (price div 100)-(../discount*price div 100),'#.00')"/>
+                                    <xsl:choose>
+                                        <xsl:when test="price[@currency='euro']">
+                                            € | <xsl:value-of select="format-number(price * 1.06 + (price*1.06*//vat div 100) - (price*1.06*../discount div 100),'#.00')"/> $
+                                        </xsl:when>
+                                    <xsl:otherwise>
+                                            $ | <xsl:value-of select="format-number(price * 0.94 + (price*0.94*//vat div 100) - (price*0.94*../discount div 100),'#.00')"/> €
+                                    </xsl:otherwise>
+                                    </xsl:choose>
+                                    <br/>
                                 </span>
-                                <a href="{current()/url}" class="button fit">Más información</a>
+                                <a href="{current()/url}" class="button fit">More information</a>
                             </div>
                         </xsl:for-each>
+                        <p>*All services come with <xsl:value-of select="$page//vat"/>% vat (already included)</p>
                     </div>
                 </section>
                 
